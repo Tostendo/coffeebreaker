@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
@@ -32,14 +32,10 @@ function App() {
   const [allRemainingQuestions, setAllRemainingQuestions] = useState(questions);
 
   const selectQuestion = () => {
-    console.info(
-      `length of remaining before select: ${allRemainingQuestions.length}`
-    );
     const remaining = allRemainingQuestions.filter(
       (el, index) => index !== questionIndex
     );
     let tmp = getRandomInt(remaining.length);
-    console.info(`new index: ${tmp}, length of remaining: ${remaining.length}`);
     setAllRemainingQuestions(remaining);
     setQuestionIndex(tmp);
   };
